@@ -23,7 +23,6 @@ $t2= $_POST['t2'];
 $t3= $_POST['t3'];
 $t4= $_POST['t4'];
 
-
     $sql = "CREATE TABLE $nombreTabla(
         $a1 $t1 PRIMARY KEY,
         $a2 $t2 NOT NULL,

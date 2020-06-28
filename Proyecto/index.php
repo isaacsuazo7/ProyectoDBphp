@@ -8,7 +8,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    
+
+    	
     <script type="text/javascript">
           $(document).ready(function(){
     $('select').formSelect();
@@ -17,7 +18,7 @@
 </head>
 <body>
 
-    <div class="container" style="width: 88%;height: 100%;max-width: 100%;margin: auto;">
+    <div class="container" style="width: 88%;height: 100%;max-width: 100%;margin: center;">
     <div class="row" style="width: 100%;height: 100%;">
         <!-- Formulario -->
         <div class="col s8">
@@ -145,7 +146,7 @@
             <button type="submit" class="blue-btn-small">Guardar</button>
         </div>
         </form>
-    </div>
+
 
 
         <!-- Formulario 
