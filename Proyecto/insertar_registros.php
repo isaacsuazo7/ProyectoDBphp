@@ -63,13 +63,13 @@ if ($conexion) {
       <a class="nav-link" href="#">CREAR TABLA MySQL</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/CRUD.php">CRUD</a>
+      <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/relaciones.php">RELACIONES MySQL</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/relaciones.php">RELACIONES</a>
+      <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/consultasMS.php">CONSULTAS SQL</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link disabled" href="#">Disabled</a>
+      <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/index.php">MOTORES DB</a>
     </li>
   </ul>
 </nav>

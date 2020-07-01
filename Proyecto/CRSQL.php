@@ -66,13 +66,13 @@ if( $conexion ) {
       <a class="nav-link" href="#">CREAR TABLA SQL</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/CRUD.php">CRUD</a>
+      <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/relacionesSQL.php">RELACIONES SQL SERVER</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/relaciones.php">RELACIONES</a>
+      <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/consultasSQL.php">CONSULTAS SQL SERVER</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link disabled" href="#">Disabled</a>
+      <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/index.php">MOTORES SQL</a>
     </li>
   </ul>
 </nav>

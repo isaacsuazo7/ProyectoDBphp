@@ -21,16 +21,10 @@ $insertar = "CREATE TABLE Per (
      Address varchar(255) NOT NULL,
      City varchar(255) NOT NULL)";
 
-$vista="SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'Per'";
-$ejecutar = sqlsrv_query($conexion,$vista, array(), array( "Scrollable" => 'static' ));
-
-$row_count = sqlsrv_num_rows( $ejecutar );  
-  
-if ($row_count === false)  
-   echo "\nerror\n";  
-else if ($row_count >=0)  
-   echo "\n$row_count\n"; 
-
- 
+$vista1 = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA. COLUMNS WHERE TABLE_NAME = 'Jungla'";
+                        $query1 = sqlsrv_query($conexion,$vista1);
+                        $val = sqlsrv_fetch_array($query1);
+                        $string = "{$val[0]}";
+                    echo $string;
 ?>
 

@@ -27,28 +27,31 @@ if ($conexion) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
+    <style>
+    .bg-company-red {
+    background-color: #00618a;
+}
+</style>
 
 </head>
 
 <Body>
     <form method="post">
-        <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">RELACIONES</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/CRUD.php">CRUD</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/insertar_registros.php">CREAR
-                        TABLA</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-            </ul>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-company-red">
+        <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="#">RELACIONES MySQL</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/insertar_registros.php">CREAR TABLA MySQL</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/consultasMS.php">CONSULTAS SQL</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/index.php">MOTORES DB</a>
+    </li>
+  </ul>
         </nav>
         <br>
         <header>
@@ -148,13 +151,6 @@ if ($conexion) {
 
                     }
 
-
-
-
-
-                    $conexion->close();
-
-                    //echo $columna;
                 }
 
                 ?>
