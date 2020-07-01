@@ -98,25 +98,27 @@ if ($conexion) {
 
                     if ($relacion == "1" || $relacion=="2") {
 
-                        $query1 = $conexion->query("SHOW COLUMNS FROM $tabla2");
+                        $query1 = $conexion->query("SHOW COLUMNS FROM $tabla1");
                         $val = mysqli_fetch_array($query1);
                         $string = "{$val[0]}";
+                        
 
 
-                        echo $query5 = "ALTER TABLE $tabla2 ADD FOREIGN KEY ($fk) REFERENCES $tabla1($string)";
 
-                        echo $query4 = "ALTER TABLE $tabla2 ADD INDEX ($fk)";
+                         $query5 = "ALTER TABLE $tabla2 ADD FOREIGN KEY ($fk) REFERENCES $tabla1($string)";
+
+                         $query4 = "ALTER TABLE $tabla2 ADD INDEX ($fk)";
 
                         if ($ejecutar = $conexion->query($query4) === true) {
-                            echo "El Indice se creó correctamente...";
+                           // echo "El Indice se creó correctamente...";
                         } else {
                             die("Error al crear indice: " . $conexion->error);
                         }
 
                         if ($ejecuta = $conexion->query($query5) === true) {
-                            echo "La llave foranea se creó correctamente...";
+                          //  echo "La llave foranea se creó correctamente...";
                         } else {
-                            die("Error al crear la=lave: " . $conexion->error);
+                            die("Error al crear la llave: " . $conexion->error);
                         }
                     } else if($relacion =="3"){
                         $query7 = $conexion->query("SHOW COLUMNS FROM $tabla1");
