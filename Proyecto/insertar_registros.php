@@ -150,7 +150,7 @@ if ($conexion) {
                 if ($result->num_rows == 1) {
                     echo "Table exists";
                     $sql = "ALTER TABLE $nombreTabla add(
-                        $atributo $tipoDato  NOT NULL)";
+                        $atributo $tipoDato NOT NULL)";
     
                     if ($conexion->query($sql) === true) {
                         echo "La tabla se creó correctamente...";
@@ -169,7 +169,6 @@ if ($conexion) {
                     }
                 }
             }
-
                 // Up! Next Value
                 $item1 = next($items1);
                 $item2 = next($items2);
