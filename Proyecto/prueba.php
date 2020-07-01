@@ -74,4 +74,24 @@ $query5 = $conexion->query("SHOW COLUMNS FROM persona");
             }
         }
 
+// 2) Preparar la orden SQL
+$query6 = $conexion->query("SELECT * FROM persona");
+
+// 4) Ir Imprimiendo las filas resultantes
+while ($fiila =mysqli_fetch_array($query6)){
+echo "<p>";
+echo $fiila ["id"];
+echo "-"; // un separador
+echo $fiila["nombre"];
+echo "-"; // un separador
+echo $fiila ["email"];
+echo "-"; // un separador
+echo "</p>";
+}
+
+
+echo  phpinfo();
+
+
+
 //mysqli_free_result($resultado);

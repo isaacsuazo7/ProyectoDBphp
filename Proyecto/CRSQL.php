@@ -1,14 +1,16 @@
 <?php
-//header("Location: ../form_validation.php?proceso=$_Proceso");
-$servidor = "localhost";
-$usuario = "root";
-$contraseña = "";
-$bd = "proyectodb";
+$serverName = "DESKTOP-K68U46E\SQLEXPRESS"; //serverName\instanceName
 
-$conexion = mysqli_connect($servidor, $usuario, $contraseña, $bd);
+// Puesto que no se han especificado UID ni PWD en el array  $connectionInfo,
+// La conexión se intentará utilizando la autenticación Windows.
+$connectionInfo = array( "Database"=>"proyectodb");
+$conexion = sqlsrv_connect( $serverName, $connectionInfo);
 
-if ($conexion) {
-} else {
+if( $conexion ) {
+    // echo "Conexión establecida.<br />";
+}else{
+    // echo "Conexión no se pudo establecer.<br />";
+     die( print_r(sqlsrv_error(), true));
 }
 
 ?>
@@ -42,10 +44,11 @@ if ($conexion) {
                 $(parent).remove();
             });
         });
+        
     </script>
 <style>
     .bg-company-red {
-    background-color: #00618a;
+    background-color: #d02a27;
 }
 </style>
 
@@ -60,7 +63,7 @@ if ($conexion) {
         <nav class="navbar navbar-expand-sm navbar-dark bg-company-red">
   <ul class="navbar-nav">
     <li class="nav-item active">
-      <a class="nav-link" href="#">CREAR TABLA MySQL</a>
+      <a class="nav-link" href="#">CREAR TABLA SQL</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/CRUD.php">CRUD</a>
@@ -82,6 +85,7 @@ if ($conexion) {
 
 
                   
+
             <table class="table table-secondary" id="tabla">
             <thead>
                 <tr>
@@ -127,7 +131,6 @@ if ($conexion) {
 
         <?php
 
-        //////////////////////// PRESIONAR EL BOTÓN //////////////////////////
         if (isset($_POST['insertar'])) {
 
             $nombreTabla =  ($_POST['nombreTabla']);
@@ -135,7 +138,6 @@ if ($conexion) {
             $items2 = ($_POST['tipoDato']);
 
              
-            ///////////// SEPARAR VALORES DE ARRAYS
             while (true) {
 
 
@@ -146,29 +148,32 @@ if ($conexion) {
                 $tipoDato = (($item2 !== false) ? $item2 : ", &nbsp;");
 
 
-              if ($result = $conexion->query("SHOW TABLES LIKE '" . $nombreTabla . "'")) {
-                if ($result->num_rows == 1) {
-                    echo "Table exists";
-                    $sql = "ALTER TABLE $nombreTabla add(
-                        $atributo $tipoDato  NOT NULL)";
-    
-                    if ($conexion->query($sql) === true) {
-                        echo "La tabla se creó correctamente...";
+                $vista="SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = '$nombreTabla'";
+                
+                if ($result = sqlsrv_query($conexion,$vista, array(), array( "Scrollable" => 'static' ))) {
+                    $row_count = sqlsrv_num_rows( $result );  
+                    if ($row_count == 1) {
+                        //echo "Table exists";
+
+                        $sql = "ALTER TABLE $nombreTabla ADD $atributo $tipoDato NOT NULL";
+        
+                        if (sqlsrv_query($conexion,$sql)) {
+                            //echo "La tabla se creó correctamente...";
+                        } else {
+                            //die("Error al actualizar tabla: " );
+                        }
                     } else {
-                        die("Error al crear tabla: " . $conexion->error);
-                    }
-                } else {
-                    echo "Table does not exist";
-                    $sql = "CREATE TABLE $nombreTabla(
-                        $atributo $tipoDato PRIMARY KEY)";
-    
-                    if ($conexion->query($sql) === true) {
-                        echo "La tabla se creó correctamente...";
-                    } else {
-                        die("Error al crear tabla: " . $conexion->error);
+                       // echo "Table does not exist";
+                        $sql = "CREATE TABLE $nombreTabla(
+                            $atributo $tipoDato PRIMARY KEY)";
+        
+                        if (sqlsrv_query($conexion,$sql)) {
+                           // echo "La tabla se creó correctamente...";
+                        } else {
+                           // die("Error al crear tabla: " );
+                        }
                     }
                 }
-            }
 
                 // Up! Next Value
                 $item1 = next($items1);
