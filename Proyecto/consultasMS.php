@@ -38,10 +38,10 @@ if ($conexion) {
       <a class="nav-link" href="#">CONSULTAS MySQL</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/insertar_registros.php">CREAR TABLA MySQL</a>
+      <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/CRTMS.php">CREAR TABLA MySQL</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/consultasMS.php">CONSULTAS SQL</a>
+      <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/relacionesMS.php">RELACIONES SQL</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/index.php">MOTORES DB</a>
@@ -75,9 +75,9 @@ if ($conexion) {
         $consulta =  ($_POST['consulta']);
  
             if ($result = $conexion->query($consulta)) {
-                echo "Sentencia ejecutada";
+                echo '<br><div class="alert alert-success col-sm-4">Sentencia ejecutada</div>';
                     } else {
-                    die("Error al ejecutar sentencia: " . $conexion->error);
+                        echo '<br><div class="alert alert-success col-sm-4">Sentencia ejecutada</div>';
             }
 
         }

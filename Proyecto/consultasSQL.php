@@ -42,7 +42,7 @@ if( $conexion ) {
                 <a class="nav-link" href="#">CONSULTAS SQL</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/CRSQL.php">CREAR TABLE SQL SERVER</a>
+                <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/CRSQL.php">CREAR TABLA SQL SERVER</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/relacionesSQL.php">RELACIONES SQL SERVER</a>
@@ -81,7 +81,7 @@ if( $conexion ) {
             if (sqlsrv_query($conexion,$consulta)) {
                 echo '<br><div class="alert alert-success col-sm-4">Sentencia ejecutada</div>';
                     } else {
-                echo '<br><div class="alert alert-danger col-sm-4">Error al nacer</div>';
+                echo '<br><div class="alert alert-danger col-sm-4">Error al ejecutar sentencia</div>';
             }
 
         }

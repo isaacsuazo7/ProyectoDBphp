@@ -54,7 +54,7 @@ if( $conexion ) {
 </nav>
         <br>
         <header>
-            <h1>RELACIONES ENTRE TABLAS</h1>
+            <h2 style="color:red;text-align:center;">RELACIONES ENTRE TABLAS</h2>
 
         </header>
 
@@ -113,12 +113,12 @@ if( $conexion ) {
                         $vista2 = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA. COLUMNS WHERE TABLE_NAME = '$tabla1'";
                         $query11 = sqlsrv_query($conexion,$vista2);
                         $val7 = sqlsrv_fetch_array($query11);
-                        echo $id1 = "{$val7[0]}";
+                        $id1 = "{$val7[0]}";
 
                         $vista3 = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA. COLUMNS WHERE TABLE_NAME = '$tabla2'";
                         $query12 = sqlsrv_query($conexion,$vista3);
                         $val8 = sqlsrv_fetch_array($query12);
-                        echo $id2 = "{$val8[0]}";
+                        $id2 = "{$val8[0]}";
 
                         $nuevaTabla = $tabla1.'_'.$tabla2;
 

@@ -140,7 +140,7 @@ $conexion = mysqli_connect($servidor, $usuario, $contraseña, $bd);
                     <img src="./Images/mysql.jpg" alt="Avatar" class="image">
                     <div class="overlay">
                         <div class="text">MySQL</div>
-                        <a href="http://localhost/xampp/ProyectoDB/Proyecto/insertar_registros.php" class="stretched-link"></a>
+                        <a href="http://localhost/xampp/ProyectoDB/Proyecto/CRTMS.php" class="stretched-link"></a>
                     </div>
                     <div class="card-body">
                     </div>

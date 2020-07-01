@@ -63,7 +63,7 @@ if ($conexion) {
       <a class="nav-link" href="#">CREAR TABLA MySQL</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/relaciones.php">RELACIONES MySQL</a>
+      <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/relacionesMS.php">RELACIONES MySQL</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="http://localhost/xampp/ProyectoDB/Proyecto/consultasMS.php">CONSULTAS SQL</a>
@@ -148,22 +148,22 @@ if ($conexion) {
 
               if ($result = $conexion->query("SHOW TABLES LIKE '" . $nombreTabla . "'")) {
                 if ($result->num_rows == 1) {
-                    echo "Table exists";
+                  //  echo "Table exists";
                     $sql = "ALTER TABLE $nombreTabla add(
                         $atributo $tipoDato NOT NULL)";
     
                     if ($conexion->query($sql) === true) {
-                        echo "La tabla se creó correctamente...";
+                     //   echo "La tabla se creó correctamente...";
                     } else {
                         die("Error al crear tabla: " . $conexion->error);
                     }
                 } else {
-                    echo "Table does not exist";
+                 //   echo "Table does not exist";
                     $sql = "CREATE TABLE $nombreTabla(
                         $atributo $tipoDato PRIMARY KEY)";
     
                     if ($conexion->query($sql) === true) {
-                        echo "La tabla se creó correctamente...";
+                    //    echo "La tabla se creó correctamente...";
                     } else {
                         die("Error al crear tabla: " . $conexion->error);
                     }
